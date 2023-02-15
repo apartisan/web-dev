@@ -3,6 +3,13 @@
 <?php $elevi = afiseaza_elevi();
 ?> 
 <!--code here -->
+<nav>
+    <ul>
+        <li><a href="login.php">Intra in cont</a></li>
+        <li><a href="register.php">Inregistrare</a></li>
+    </ul>
+</nav>
+
 <h1>INSERARE ELEVI</h1>
 <form action="insert_elevi.php" method="GET">
     <input type="text" name="nume" placeholder="Numele elevului" 
