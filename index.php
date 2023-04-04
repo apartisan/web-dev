@@ -1,14 +1,25 @@
 <?php include ("includes/header.php"); ?>
 <?php include ("includes/functions.php"); ?>
+<?php 
+    if(isset($_SESSION["utilizator"]["id"])){
+        echo "Salut, " . $_SESSION["utilizator"]["nume"]. ", id-ul tau este " . $_SESSION["utilizator"]["id"];
+        echo '<br><a href="logout.php">Iesi din cont</a>';
+    }
+    else{
+        echo "Salut, anonimule!";
+        echo '<nav>' .
+             '<ul>' .
+                 '<li><a href="login.php">Intra in cont</a></li>' .
+                '<li><a href="register.php">Inregistrare</a></li>' .
+            ' </ul>' .
+        '</nav>';
+    }
+
+?>
+
 <?php $elevi = afiseaza_elevi();
 ?> 
-<!--code here -->
-<nav>
-    <ul>
-        <li><a href="login.php">Intra in cont</a></li>
-        <li><a href="register.php">Inregistrare</a></li>
-    </ul>
-</nav>
+
 
 <h1>INSERARE ELEVI</h1>
 <form action="insert_elevi.php" method="GET">

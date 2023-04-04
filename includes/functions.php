@@ -22,4 +22,12 @@ function inserare_elev($nume, $prenume, $clasa)
     }
 }
 
+function getUtilizatorDupaID($id)
+{
+global $conn;
+$sql = "SELECT * FROM utilizatori WHERE id=$id LIMIT 1";
+$result = mysqli_query($conn, $sql);
+$utilizator = mysqli_fetch_assoc($result);
+return $utilizator;
+}
 ?>
